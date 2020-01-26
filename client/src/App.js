@@ -19,6 +19,20 @@ class App extends Component {
     return (
       <>
         <h1>Women's World Cup players ranked in search interest, June-July 2019, worldwide</h1>
+        {this.state.players.map( ( players, index ) => (
+          <ul key={index}>
+            <li> 
+              Name: {players.name}
+            </li>
+            <li> 
+              Country: {players.country}  
+            </li>
+            <li>  
+              Searches: {players.searches} 
+            </li>
+            <hr></hr>
+          </ul>
+        ))}
       </>
     )
   }
