@@ -3,9 +3,17 @@ import './App.css'
 class App extends Component {
   constructor() {
     super()
-    this.state = null;
+    this.state = {
+      players: [],
+    }
   }
 
+  componentDidMount() {
+    fetch('http://localhost:5000/api/players')
+      .then(res => res.json())
+      .then(players => this.setState({ players: players }))
+      .catch(err => console.log('err'))
+  }
 
   render() {
     return (
