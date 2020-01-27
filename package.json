@@ -6,13 +6,16 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.3",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "typeface-roboto": "^0.0.75"
   },
   "devDependencies": {
-    "nodemon": "^1.17.2"
+    "nodemon": "^1.17.2",
+    "react-test-renderer": "^16.11.0"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "test": "jest --watchAll"
   },
   "author": "Lambda School",
   "license": "ISC"
