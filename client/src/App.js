@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Grid, Container, Header, Segment } from 'semantic-ui-react'
+import CountdownTimer from './components/CountdownTimer'
 
 import PlayerCard from './components/PlayerCard.js'
 import './App.css'
 class App extends Component {
   constructor() {
-    super()
+    super() 
     this.state = {
       players: [],
     }
@@ -27,6 +28,7 @@ class App extends Component {
           Women's World Cup players ranked in search interest, June-July 2019,
           worldwide
         </Header>
+        <CountdownTimer />
         </Segment>
         <Grid celled container stackable columns={3} centered padded>
           <Grid.Row textAlign='justified'>
