@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { Grid, Container, Header, Segment } from 'semantic-ui-react'
+
+import PlayerCard from './components/PlayerCard.js'
 import './App.css'
 class App extends Component {
   constructor() {
@@ -18,21 +21,27 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1>Women's World Cup players ranked in search interest, June-July 2019, worldwide</h1>
-        {this.state.players.map( ( players, index ) => (
-          <ul key={index}>
-            <li> 
-              Name: {players.name}
-            </li>
-            <li> 
-              Country: {players.country}  
-            </li>
-            <li>  
-              Searches: {players.searches} 
-            </li>
-            <hr></hr>
-          </ul>
+      <Container texAlign='center'>
+        <Segment basic padded='very'>
+        <Header as='h1' textAlign='center' color='pink'>
+          Women's World Cup players ranked in search interest, June-July 2019,
+          worldwide
+        </Header>
+        </Segment>
+        <Grid celled container stackable columns={3} centered padded>
+          <Grid.Row textAlign='justified'>
+        {this.state.players.map(players => (
+          <Grid.Column>
+            <PlayerCard
+                name={players.name}
+                country={players.country}
+                searches={players.searches}
+              />
+              </Grid.Column>
         ))}
+        </Grid.Row>
+        </Grid>
+        </Container>
       </>
     )
   }
